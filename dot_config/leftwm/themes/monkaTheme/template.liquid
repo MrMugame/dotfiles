@@ -3,11 +3,15 @@
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
 %{F#c0caf5}%{B#2D66E0}  {{tag.name}}  %{B-}%{F-}
 %{A}
-{% elsif tag.visible  %}
+{% elsif tag.visible %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
 %{F#000000}%{B#E60053}  {{tag.name}}  %{B-}%{F-}
 %{A}
-{% else tag.visible  %}
+{% elsif tag.busy == false %}
+%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
+%{F#565f89}  {{tag.name}}  %{B-}%{F-}
+%{A}
+{% else %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
 %{F#c0caf5}  {{tag.name}}  %{F-}
 %{A}
